@@ -31,7 +31,6 @@
 		<javadoc packagenames="src" sourcepath="${src.dir}" destdir="${docs.dir}">
 			<fileset dir="${src.dir}">
 				<include name="**" />
-				<exclude name="**/tests/**" />
 			</fileset>
 		</javadoc>
 	</target>
@@ -46,7 +45,7 @@
 	</target>
 
 	<target name="run" depends="jar">
-		<java jar="${build.src}\DatumProgram.jar" fork="true" />
+		<java jar="${dist.dir}\DatumProgram.jar" fork="true" />
 	</target>
 
 </project>
