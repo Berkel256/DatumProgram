@@ -1,6 +1,7 @@
 package view;
 
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -38,16 +39,18 @@ public class DatumInput extends JFrame implements Observer{
 	}
 
 	private void initializeGui(){
-		setSize(300,200);
+		setSize(500,200);
+		setLayout(new FlowLayout(FlowLayout.LEFT));
 
 		panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		add(panel);
 		explainLabel = new JLabel("Enter Year to check, if it is a leapyear: ");
 		inputYear = new JTextField();
-		inputYear.setSize(new Dimension(100,50));
+		inputYear.setMaximumSize(new Dimension(150,50));
 		checkButton = new JButton("Check");
 		answerLabel = new JLabel("");
+
 
 
 		//add to panel
