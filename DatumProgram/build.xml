@@ -22,7 +22,13 @@
 
 	<!-- Compile Java Code including JUnit -->
 	<target name="compile" depends="clean, makedir">
-		<javac srcdir="${src.dir}" destdir="${build.dir}">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="true">
+		    <classpath>
+		        <pathelement path="${classpath}"/>
+		        <fileset dir="C:/Program Files (x86)/eclipse/plugins/org.junit_4.11.0.v201303080030">
+		            <include name="**/*.jar"/>
+		        </fileset>
+		    </classpath>
 		</javac>
 	</target>
 
